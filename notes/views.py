@@ -34,6 +34,3 @@ def update_card(request, id):
 
     
     return render(request, 'notes/note-form.html', {'form': form, 'note': note})
-
-def delete_card():
-    return redirect('index')
