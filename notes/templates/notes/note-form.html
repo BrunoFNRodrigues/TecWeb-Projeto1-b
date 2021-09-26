@@ -1,5 +1,8 @@
 <!doctype html>
+{% load static %}
+
 <html lang="en">
+<link rel="stylesheet" type="text/css" href="{% static 'notes/styles/getit.css' %}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,14 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body class="container">
+    
+    <h1>Update Note</h1>
 
-    <h1>New/Update product</h1>
-
-    <form method="POST">
+    <form method="POST" class="form-card">
         {% csrf_token %}
         {{ form }}
-        <button type="submit">Save</button>
+        <button type="submit" class="btn">Salvar</button>
     </form>
 
 </body>

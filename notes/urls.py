@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import index, update_card, delete_card
+from .views import index, update_card
 
 urlpatterns = [
     path('', index, name='index'),

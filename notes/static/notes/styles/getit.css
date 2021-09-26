@@ -25,11 +25,13 @@ Algumas informações úteis e dicas:
  html{
     height: 100%;
   }
+
   body {
     font-family: "Roboto", sans-serif;
     background-color: #fafafa;
     height: inherit;
   }
+
   .appbar{
     background-color: #f8da46ef;
     align-items: center;
@@ -42,7 +44,7 @@ Algumas informações úteis e dicas:
     height: 2.7rem;
     padding: 0.5rem;
   }
-  
+
   .subtitle{
     font-size: 1rem;
   }
@@ -72,6 +74,7 @@ Algumas informações úteis e dicas:
     font-size: 1.5rem;
     border: none;
   }
+  
   .type{
     color: black;
   
