@@ -1,0 +1,67 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'notes/styles/getit.css' %}">
+<div class="appbar">
+    <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+    <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+</div>
+
+<main class="container">
+  <form method="post" class="form-card">
+    {% csrf_token %}
+        <input          
+          type="hidden"
+          name="metodo"
+          value="post"
+        />
+        <input          
+          class="form-card-title"
+          type="text"
+          name="titulo"
+          placeholder="Título"
+        />
+        <input 
+          class="autoresize"
+          name="detalhes"
+          placeholder="Digite o conteudo..."
+          />
+        <input type="submit" class="btn" value="Criar"/>
+  </form>
+
+  <ul class="card-container">
+    {% for note in notes %}
+    <div class="card">
+    <form method="post">
+        {% csrf_token %}
+        <input          
+          type="hidden"
+          name="metodo"
+          value="delete"
+        />
+        <input          
+          type="hidden"
+          id="titulo"
+          name="titulo"
+          value="{{note.title}}"
+        />
+        <input 
+          type="hidden"
+          name="detalhes"
+          value= "{{note.content}}"
+          />
+        <input type="submit" value="X"/>
+    </form>
+    <h3 class="card-title">{{note.title}}</h3>
+    <div class="card-content">
+    <p>
+        {{note.content}}
+    </p>
+    </div>
+</div>
+    {% endfor %}
+  </ul>
+</main>
+<script type="text/javascript" src="{% static 'notes/scripts/getit.js' %}"></script>
+{% endblock %}
