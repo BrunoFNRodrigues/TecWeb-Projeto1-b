@@ -1,19 +1,24 @@
 from django.shortcuts import render, redirect
 from .models import Note
+from .form import NoteForm
 
 def index(request):
     if request.method == 'POST':
         metodo = request.POST.get('metodo')
-        title = request.POST.get('titulo')
-        content = request.POST.get('detalhes')
         if metodo == "post":
-
+            title = request.POST.get('titulo')
+            content = request.POST.get('detalhes')
             note = Note(title= title, content = content)
             note.save()
         elif metodo == "delete":
-            note = Note.objects.get(title=title, content=content)
+            id = request.POST.get('id')
+            note = Note.objects.get(id=id)
             note.delete()
-       
+        elif metodo == "upadte":
+            id = request.POST.get('id')
+            note = Note.objects.get(id=id)
+            note.delete()
+
         return redirect('index')
     else:
         all_notes = Note.objects.all()
@@ -28,7 +33,7 @@ def update_card(request, id):
         return redirect('index')
 
     
-    return render(request, 'note-form.html', {'form': form, 'note': note})
+    return render(request, 'notes/note-form.html', {'form': form, 'note': note})
 
 def delete_card():
     return redirect('index')
