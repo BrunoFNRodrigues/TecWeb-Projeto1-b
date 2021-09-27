@@ -40,6 +40,14 @@ Algumas informações úteis e dicas:
     display: flex;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
   }
+
+  .appbar2{
+    background-color: #f8da4600;
+    align-items: center;
+    justify-content: space-between;
+    height: 6%;
+    display: flex;
+  }
   
   .logo{
     height: 2.7rem;
