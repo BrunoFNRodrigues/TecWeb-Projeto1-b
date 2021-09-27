@@ -39,3 +39,7 @@ def update_card(request, id):
 
     
     return render(request, 'notes/note-form.html', {'form': form, 'note': note})
+
+def tags_list(request):
+    all_tags = Tag.objects.all()
+    return render(request, 'notes/tags_list.html', {'tags': all_tags})
