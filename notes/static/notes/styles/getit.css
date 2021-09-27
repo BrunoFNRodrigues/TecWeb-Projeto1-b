@@ -35,6 +35,7 @@ Algumas informações úteis e dicas:
   .appbar{
     background-color: #f8da46ef;
     align-items: center;
+    justify-content: space-around;
     height: 6%;
     display: flex;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
