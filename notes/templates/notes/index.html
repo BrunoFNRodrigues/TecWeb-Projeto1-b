@@ -4,9 +4,14 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'notes/styles/getit.css' %}">
 <div class="appbar">
+    <div class="appbar">
     <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
     <span class="subtitle">Como o Post-it, mas com outro verbo</span>
-    <a href='./tags'>tags</a>
+    </div>
+    <a href="./tags" style="
+    margin: 1rem;
+    font-weight: bold;
+    ">Tags</a>
 </div>
 
 <main class="container">
