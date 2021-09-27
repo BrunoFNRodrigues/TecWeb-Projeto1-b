@@ -27,6 +27,11 @@
           name="detalhes"
           placeholder="Digite o conteudo..."
           />
+          <input 
+          class="autoresize"
+          name="tag"
+          placeholder="Digite a tag..."
+          />
         <input type="submit" class="btn" value="Criar"/>
   </form>
 
@@ -34,7 +39,7 @@
     {% for note in notes %}
     <div class="card">
     <form method="post">
-        {% csrf_token %}
+        {% csrf_token %} 
         <input          
           type="hidden"
           name="metodo"
